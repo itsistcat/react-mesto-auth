@@ -22,7 +22,7 @@ export default function PopupWithForm({ popup, ...props }) {
                 <button aria-label="закрыть" className="popup__close" type="button" 
                 onClick={props.onClose} />
                 <form name={popup.formName} className={`popup__form ${popup.classSelectorModifierForm}`}
-                noValidate onSubmit={props.onSubmit}>
+                onSubmit={props.onSubmit}>
                     {props.children}
                     <button aria-label="сохранить" className={`popup__save ${popup.classSelectorModifierSubmitBtn}`}>{handleBtnText()}</button>
                 </form>

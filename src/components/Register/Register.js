@@ -44,16 +44,16 @@ export default function Register({
     registerUser(email, password)
       .then((res) => {
         setIsProcessLoading(false);
-
         if (res) {
           setIsData(true);
           onInfoTooltip();
         };
-
+        
         if (!res) {
           onInfoTooltip();
         };
       })
+      
       .catch((err) => {
         console.log(`Ошибка в процессе регистрации пользователя на сайте: ${err}`);
       })

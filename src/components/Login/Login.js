@@ -39,6 +39,7 @@ export default function Login({ handleLogin, isProcessLoading, setIsProcessLoadi
           navigate('../', { replace: true });
         };
       })
+      
       .catch((err) => {
         console.log(`Ошибка в процессе авторизации пользователя на сайте: ${err}`);
       })

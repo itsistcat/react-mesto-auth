@@ -4,6 +4,11 @@
 
 @import url('./blocks/body/body.css');
 
+@import url('./blocks/not-found/not-found.css');
+@import url('./blocks/not-found/__heading/not-found__heading.css');
+@import url('./blocks/not-found/__link/not-found__link.css');
+@import url('./blocks/not-found/__subheading/not-found__subheading.css');
+
 @import url('./blocks/welcome-window/welcome-window.css');
 @import url('./blocks/welcome-window/__heading/welcome-window__heading.css');
 @import url('./blocks/welcome-window/__form/welcome-window__form.css');

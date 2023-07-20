@@ -9,6 +9,7 @@ import { getContent } from '../../utils/auth.js';
 
 import Login from '../Login/Login.js';
 import Register from '../Register/Register.js';
+import PageNotFound from '../PageNotFound/PageNotFound.js';
 
 import Header from '../Header/Header.js';
 import Main from '../Main/Main.js';
@@ -118,7 +119,7 @@ function App() {
     setSelectedCard(cardData);
     setIsImagePopupOpened(true);
   };
-  
+
 
   function closeAllPopups() {
     setEditProfilePopupOpen(false);
@@ -226,6 +227,8 @@ function App() {
     return null;
   };
 
+  console.log(isActiveBurgerMenu && 'active')
+
   return (
     <>
 
@@ -303,25 +306,27 @@ function App() {
                 </>
               }
             />
-<Route path='sign-in' element={<Login
-            handleLogin={handleLogin}
-            isProcessLoading={isProcessLoading}
-            setIsProcessLoading={setIsProcessLoading}
-          />
-          }
-          />
-          <Route path='sign-up' element={
-            <Register
-              popupPackProps={popupPackProps}
-
+            <Route path='sign-in' element={<Login
+              handleLogin={handleLogin}
+              isProcessLoading={isProcessLoading}
               setIsProcessLoading={setIsProcessLoading}
-              isInfoTooltipOpened={isInfoTooltipOpened}
-              onInfoTooltip={openInfoTooltip}
-              isOpened={isInfoTooltipOpened}
             />
-          }
-          />
+            }
+            />
+            <Route path='sign-up' element={
+              <Register
+                popupPackProps={popupPackProps}
+
+                setIsProcessLoading={setIsProcessLoading}
+                isInfoTooltipOpened={isInfoTooltipOpened}
+                onInfoTooltip={openInfoTooltip}
+                isOpened={isInfoTooltipOpened}
+              />
+            }
+            />
           </Route>
+          <Route path='*' element={<PageNotFound />}
+          />
         </Routes>
       </div>
     </>
